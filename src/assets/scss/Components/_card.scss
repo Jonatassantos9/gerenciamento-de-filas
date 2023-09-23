@@ -1,0 +1,12 @@
+// ======================================== [IMPORTS]
+@import '../shadow';
+@import '../Spacing/Padding';
+
+// ======================================== [CARD]
+.card {
+    padding: 1.6em 1.5em;
+    border-radius: 13px;
+    margin-bottom: .8em;
+    box-shadow: $shadow-1;
+    background-color: rgb(255, 255, 255);
+}

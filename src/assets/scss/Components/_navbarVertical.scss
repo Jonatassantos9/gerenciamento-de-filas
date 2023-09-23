@@ -1,0 +1,97 @@
+// ======================================== [IMPORTS]
+@import '../colors';
+@import '../isFlex';
+@import '../isGrid';
+@import '../transition';
+@import '../Components/scroll';
+
+
+// The body and main have to have these settings
+body {
+    @include is-flex(flex-start, flex-start);
+}
+
+.mainIndex, .mainEmployee{
+    @extend .grid-8;
+}
+
+// ======================================== [NAVBAR-VERICAL]
+@mixin navbarVertical-1() {
+    @extend .grid-4;
+    @include scroll-2();
+    height: 100vh;
+    padding: 2em;
+    padding-left: 17px;
+    overflow-y: hidden;
+    transition: $transition-2;
+    position: sticky;
+    bottom: 1rem;
+    align-self: flex-end;
+    background-image: $gradient-1;
+
+    & * {
+        color: white;
+    }
+
+    hr{
+        border-color: rgba(255, 255, 255, .3);
+        margin-bottom: .8em;
+    }
+
+    &:hover {
+        .navbarContent {
+            padding-right: 0;
+        }
+
+        overflow-y: auto;
+    }
+
+    .navbarContent {
+        padding-top: .8em;
+        padding-right: 17px;
+        min-height: 100vh;
+    }
+
+
+    // ========== [BRAND]
+    .navBrand {
+        @include is-flex(center, flex-start);
+        padding: .8em 0;
+        font-size: 28px;
+        
+        i {
+            margin-right: .4em;
+        }
+        
+        h3{
+            font-size: 22px;
+        }
+    }
+
+    
+    // ========== [ITEM]
+
+    .navItem{
+        margin-bottom: .8em;
+        flex: 1;
+        .buttonsGroup{
+            @include is-flex(center, flex-end);
+        }
+    }
+
+    .list{
+        .navItem {
+            padding: 1em;
+            height: 100%;
+            border-radius: 10px;
+            margin-bottom: .8em;
+            background-color: $color-5;
+        }
+    }
+
+    // ========== [WHEN THE ITEM IS ACTIVE]
+    .active {
+        background-color: $color-5;
+        border-radius: 10px 0;
+    }
+}

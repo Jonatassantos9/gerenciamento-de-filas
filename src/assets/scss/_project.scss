@@ -1,0 +1,153 @@
+// ======================================== [IMPORTS]
+@import './colors';
+@import './isFlex';
+@import './isGrid';
+@import './transition';
+@import './shadow';
+@import './Components/navbarVertical';
+@import './Components/navbar';
+@import './Components/card';
+
+
+.secondPage, .thirdPage, .fourthPage{
+    display: none;
+}
+
+.navbarVertical{
+    @include navbarVertical-1();
+}
+
+main{
+    padding: 2em 4em;
+}
+body{
+    background-color: $color-4;
+}
+
+.buttonsGroup{
+    @include is-flex(center, center);
+}
+
+.firstPage, .secondPage{
+    button{
+        flex: 1;
+        height: 250px;
+        font-size: 28px;
+        margin-bottom: .4em;
+    }
+}
+
+.secondPage{
+    button{
+        height: 200px;
+        width: 40%;
+        font-size: 28px;
+        margin-bottom: .4em;
+    }
+}
+
+.thirdPage{
+    h2{
+        font-size: 22px;
+        opacity: .9;
+    }
+    
+    .buttonsGroup{
+        @include is-flex(center, flex-end);
+    }
+}
+.fourthPage{
+    .card{
+        @include is-flex(center, space-between);
+    }
+    .tit{
+        opacity: .8;
+    }
+}
+.tit{
+    font-size: 22px;
+    // font-weight: bold;
+}
+.subTit{
+    margin: .2em 0 .3em;
+    opacity: .8;
+}
+
+.senha{
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: .2em;
+}
+
+.navbar{
+    .navBrand{
+        h1{
+            color: white;
+        }
+    }
+}
+
+// ======================================== [ADMIN]
+.mainPanel{
+    min-height: 100vh;
+    margin: 0;
+}
+
+// ======================================== [TICKET]
+.ticket{
+    @include is-flex(center, flex-start);
+    box-shadow: $shadow-1;
+    border-radius: 13px;
+    background-image: $gradient-3;
+    padding: 2em;
+    & *{
+        color: white;
+    }
+    .brand{
+        width: 20%;
+        i{
+            font-size: 120px;
+            margin-bottom: .2em;
+        }
+        h1{
+            font-size: 35px;
+        }
+        h2{
+            font-size: 20px;
+        }
+        @include is-flex-column(center, flex-start);
+    }
+    .info{
+        padding: 0 4em;
+        @include is-flex-column(flex-start, flex-start);
+        width: 80%;
+        hr{
+            width: 100%;
+            margin: 1em 0;
+            border-color: rgba(255, 255, 255, .3);
+        }
+        .id{
+            margin-top: .4em;
+            font-size: 17px !important;
+        }
+        .titTicket{
+            font-size: 25px;
+        }
+        .groupOne{
+            width: 100%;
+            @include is-flex(start, space-between);
+        }
+        .groupTwo{
+            @include is-flex(center, flex-start);
+            .group{
+                width: 100%;
+                @include is-flex(center, space-between);
+            }
+            width: 100%;
+        }
+        .senha{
+            font-size: 45px;
+        }
+    }
+}
+
